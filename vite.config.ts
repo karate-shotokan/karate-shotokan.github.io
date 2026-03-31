@@ -4,9 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  // Base path for GitHub Pages: https://karate-shotokan.github.io/karate-shotokan/
-  // Change to '/' if you set up a custom domain (e.g. www.karateshotokan.pt)
-  base: '/karate-shotokan/',
+  // Base path for GitHub Pages org site: https://karate-shotokan.github.io/
+  // Change to '/karate-shotokan/' if the repo is named 'karate-shotokan' instead
+  base: '/',
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
