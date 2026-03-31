@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/sergi/source/repos/karate-shotokan -type f \\\\\\(-name *.json -o -name *.csv -o -name *.yml -o -name *.yaml \\\\\\))"
+    ]
+  }
+}

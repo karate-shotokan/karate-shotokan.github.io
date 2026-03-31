@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "badge": "TRADIÇÃO • DISCIPLINA • EXCELÊNCIA",
+    "title": "Karaté Shotokan\nem Portugal",
+    "subtitle": "Aprenda a verdadeira arte marcial com o Sensei Carlos Cardoso",
+    "ctaPrimary": "Aula Experimental Gratuita",
+    "ctaSecondary": "Encontrar Dojo",
+    "image": "https://images.unsplash.com/photo-1608583224016-d7fdbc3bf282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMHNlbnNlaSUyMGluc3RydWN0b3J8ZW58MXx8fHwxNzc0OTcyNTg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+  },
+  "benefits": [
+    {
+      "icon": "Shield",
+      "title": "Disciplina",
+      "description": "Desenvolva autocontrolo e respeito através da prática tradicional."
+    },
+    {
+      "icon": "Users",
+      "title": "Comunidade",
+      "description": "Faça parte de uma família unida pela paixão pelas artes marciais."
+    },
+    {
+      "icon": "Trophy",
+      "title": "Excelência",
+      "description": "Alcance o seu potencial máximo com ensino de qualidade superior."
+    },
+    {
+      "icon": "Heart",
+      "title": "Bem-Estar",
+      "description": "Melhore a sua saúde física e mental de forma equilibrada."
+    },
+    {
+      "icon": "Target",
+      "title": "Foco",
+      "description": "Aprenda a concentrar-se e a superar desafios do dia-a-dia."
+    },
+    {
+      "icon": "Zap",
+      "title": "Energia",
+      "description": "Ganhe força, flexibilidade e condição física de forma progressiva."
+    }
+  ],
+  "dojos": [
+    {
+      "name": "Dojo Central Lisboa",
+      "location": "Lisboa",
+      "image": "https://images.unsplash.com/photo-1764616211830-993b5e360d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjB0cmFpbmluZyUyMGRvam98ZW58MXx8fHwxNzc0ODkxNzg1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    },
+    {
+      "name": "Dojo Norte Porto",
+      "location": "Porto",
+      "image": "https://images.unsplash.com/photo-1771909720903-c4567a890a6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2pvJTIwbWFydGlhbCUyMGFydHMlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NzQ5NzI1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    },
+    {
+      "name": "Dojo Coimbra",
+      "location": "Coimbra",
+      "image": "https://images.unsplash.com/photo-1608583252022-09323426b8b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBrYXRhJTIwc3RhbmNlfGVufDF8fHx8MTc3NDk3MjU4NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Ana Silva",
+      "role": "Mãe de praticante",
+      "text": "O meu filho transformou-se completamente. Mais disciplinado, focado e respeitador. O Sensei Carlos é um verdadeiro exemplo.",
+      "rating": 5
+    },
+    {
+      "name": "João Martins",
+      "role": "Praticante Adulto",
+      "text": "Treinar aqui mudou a minha vida. Não é apenas karaté, é uma filosofia de vida que se aplica a tudo.",
+      "rating": 5
+    },
+    {
+      "name": "Maria Costa",
+      "role": "Cinturão Castanho",
+      "text": "A exigência é alta, mas o apoio também. Sinto que evoluí não só como karateka, mas como pessoa.",
+      "rating": 5
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "cities": ["Lisboa", "Porto", "Coimbra"],
+  "data": {
+    "Lisboa": {
+      "infantil": [
+        { "day": "Segunda-feira", "time": "18:00 - 19:30", "level": "6-12 anos" },
+        { "day": "Quarta-feira", "time": "18:00 - 19:30", "level": "6-12 anos" },
+        { "day": "Sexta-feira", "time": "18:00 - 19:30", "level": "6-12 anos" },
+        { "day": "Sábado", "time": "10:00 - 11:30", "level": "6-12 anos" }
+      ],
+      "jovens": [
+        { "day": "Terça-feira", "time": "18:00 - 19:30", "level": "13-17 anos" },
+        { "day": "Quinta-feira", "time": "18:00 - 19:30", "level": "13-17 anos" },
+        { "day": "Sábado", "time": "11:30 - 13:00", "level": "13-17 anos" }
+      ],
+      "adultos": [
+        { "day": "Segunda-feira", "time": "19:30 - 21:00", "level": "18+ anos" },
+        { "day": "Quarta-feira", "time": "19:30 - 21:00", "level": "18+ anos" },
+        { "day": "Sexta-feira", "time": "19:30 - 21:00", "level": "18+ anos" }
+      ]
+    },
+    "Porto": {
+      "infantil": [
+        { "day": "Segunda-feira", "time": "17:30 - 19:00", "level": "6-12 anos" },
+        { "day": "Quarta-feira", "time": "17:30 - 19:00", "level": "6-12 anos" },
+        { "day": "Sexta-feira", "time": "17:30 - 19:00", "level": "6-12 anos" }
+      ],
+      "jovens": [
+        { "day": "Terça-feira", "time": "17:30 - 19:00", "level": "13-17 anos" },
+        { "day": "Quinta-feira", "time": "17:30 - 19:00", "level": "13-17 anos" },
+        { "day": "Sábado", "time": "09:30 - 11:00", "level": "13-17 anos" }
+      ],
+      "adultos": [
+        { "day": "Terça-feira", "time": "19:00 - 20:30", "level": "18+ anos" },
+        { "day": "Quinta-feira", "time": "19:00 - 20:30", "level": "18+ anos" },
+        { "day": "Sábado", "time": "11:00 - 12:30", "level": "18+ anos" }
+      ]
+    },
+    "Coimbra": {
+      "infantil": [
+        { "day": "Segunda-feira", "time": "18:00 - 19:30", "level": "6-12 anos" },
+        { "day": "Quarta-feira", "time": "18:00 - 19:30", "level": "6-12 anos" },
+        { "day": "Sábado", "time": "10:00 - 11:30", "level": "6-12 anos" }
+      ],
+      "jovens": [
+        { "day": "Terça-feira", "time": "18:00 - 19:30", "level": "13-17 anos" },
+        { "day": "Quinta-feira", "time": "18:00 - 19:30", "level": "13-17 anos" }
+      ],
+      "adultos": [
+        { "day": "Terça-feira", "time": "19:30 - 21:00", "level": "18+ anos" },
+        { "day": "Quinta-feira", "time": "19:30 - 21:00", "level": "18+ anos" },
+        { "day": "Sábado", "time": "11:30 - 13:00", "level": "18+ anos" }
+      ]
+    }
+  }
+}

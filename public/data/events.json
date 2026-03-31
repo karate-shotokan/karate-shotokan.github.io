@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "type": "Exame de Graduação",
+    "title": "Exame de Cintos - Primavera 2026",
+    "date": "15 de Maio de 2026",
+    "location": "Dojo Central Lisboa",
+    "description": "Exame de passagem de grau para todos os níveis. Inscrições abertas até 1 de Maio.",
+    "status": "upcoming"
+  },
+  {
+    "id": 2,
+    "type": "Estágio",
+    "title": "Estágio Nacional de Kata",
+    "date": "22-23 de Junho de 2026",
+    "location": "Porto",
+    "description": "Dois dias intensivos de treino focado em Kata com a presença de mestres nacionais.",
+    "status": "upcoming"
+  },
+  {
+    "id": 3,
+    "type": "Competição",
+    "title": "Campeonato Regional Norte",
+    "date": "10 de Julho de 2026",
+    "location": "Braga",
+    "description": "Competição regional de Kumite e Kata. Aberto a todos os praticantes federados.",
+    "status": "upcoming"
+  },
+  {
+    "id": 4,
+    "type": "Seminário",
+    "title": "Seminário Internacional com Sensei Tanaka",
+    "date": "5-6 de Setembro de 2026",
+    "location": "Lisboa",
+    "description": "Seminário especial com o mestre japonês Sensei Tanaka, 8º Dan.",
+    "status": "upcoming"
+  },
+  {
+    "id": 5,
+    "type": "Demonstração",
+    "title": "Demonstração Pública - Dia do Município",
+    "date": "20 de Outubro de 2026",
+    "location": "Coimbra",
+    "description": "Demonstração pública de Karaté Shotokan nas celebrações do município.",
+    "status": "upcoming"
+  },
+  {
+    "id": 6,
+    "type": "Exame",
+    "title": "Exame de Cintos - Outono 2026",
+    "date": "15 de Novembro de 2026",
+    "location": "Vários Dojos",
+    "description": "Exame de graduação em todos os dojos. Datas específicas a confirmar por cada localização.",
+    "status": "upcoming"
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "faqs": [
+    {
+      "question": "Que idade é necessária para começar?",
+      "answer": "Aceitamos praticantes a partir dos 6 anos de idade. Para crianças mais novas, recomendamos aguardar até terem maturidade física e emocional suficiente para seguir as instruções do treino."
+    },
+    {
+      "question": "Preciso de experiência prévia?",
+      "answer": "Não! As nossas turmas estão organizadas por níveis, e temos grupos específicos para iniciantes. Todos começam do zero e progridem ao seu próprio ritmo."
+    },
+    {
+      "question": "O que devo levar para a primeira aula?",
+      "answer": "Para a primeira aula experimental, basta roupa desportiva confortável (calças de fato de treino e t-shirt). Treina-se descalço. Se decidir continuar, aconselhamos a aquisição do kimono (karategi)."
+    },
+    {
+      "question": "Com que frequência devo treinar?",
+      "answer": "Recomendamos pelo menos 2 a 3 treinos por semana para uma progressão consistente. No entanto, adaptamos o ritmo às necessidades e disponibilidade de cada praticante."
+    },
+    {
+      "question": "Quanto custa a mensalidade?",
+      "answer": "Os valores variam consoante o dojo e o número de aulas semanais. Entre em contacto com o dojo mais próximo de si para valores específicos. A primeira aula é sempre gratuita!"
+    },
+    {
+      "question": "Quanto tempo demora a atingir a faixa preta?",
+      "answer": "Em média, com treino regular e dedicado, leva entre 4 a 6 anos. No entanto, o Karaté é uma jornada pessoal - não é uma corrida. O importante é a aprendizagem e o desenvolvimento contínuo."
+    },
+    {
+      "question": "É necessário competir?",
+      "answer": "Não! A competição é opcional. Muitos dos nossos praticantes focam-se apenas no desenvolvimento pessoal e na tradição. Para quem tem interesse, apoiamos e treinamos para competições."
+    },
+    {
+      "question": "O Karaté é seguro para crianças?",
+      "answer": "Sim! O treino é supervisionado e adaptado a cada faixa etária. Ensinamos controlo, respeito e segurança desde o primeiro dia. As lesões são raras e geralmente menores."
+    }
+  ],
+  "startingGuide": [
+    {
+      "icon": "Shirt",
+      "title": "Equipamento Necessário",
+      "items": [
+        "Kimono branco (karategi) - pode adquirir no dojo",
+        "Cinto branco (fornecido no início)",
+        "Roupa interior adequada",
+        "Garrafa de água"
+      ]
+    },
+    {
+      "icon": "Calendar",
+      "title": "Como Funciona a Primeira Aula",
+      "items": [
+        "Chegue 15 minutos antes",
+        "Apresente-se ao instrutor",
+        "Observe e participe ao seu ritmo",
+        "Faça perguntas após a aula"
+      ]
+    },
+    {
+      "icon": "Users",
+      "title": "Etiqueta do Dojo",
+      "items": [
+        "Cumprimente ao entrar e sair (rei/reverência)",
+        "Mantenha o kimono limpo",
+        "Respeite o sensei e os colegas",
+        "Não use joias durante o treino"
+      ]
+    },
+    {
+      "icon": "BookOpen",
+      "title": "Terminologia Básica",
+      "items": [
+        "Sensei - Professor/Mestre",
+        "Dojo - Local de treino",
+        "Rei - Reverência/cumprimento",
+        "Osu - Saudação/concordância"
+      ]
+    }
+  ]
+}

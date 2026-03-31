@@ -1,0 +1,14 @@
+{
+  "phone": "+351 XXX XXX XXX",
+  "phoneHours": "Seg-Sex: 10h-20h",
+  "email": "info@karateshotokan.pt",
+  "emailNote": "Resposta em 24h",
+  "addressLine1": "Av. da República, 123",
+  "addressLine2": "1050-123 Lisboa",
+  "addressLine3": "Portugal",
+  "social": {
+    "facebook": "#",
+    "instagram": "#",
+    "youtube": "#"
+  }
+}

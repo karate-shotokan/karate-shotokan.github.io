@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { useData } from "../hooks/useData";
 
-const categories = ["Todos", "Treino", "Exames", "Competições", "Eventos", "Estágios"];
+interface GalleryItem {
+  id: number;
+  category: string;
+  image: string;
+  title: string;
+}
 
-const galleryItems = [
-  { id: 1, category: "Treino", image: "https://images.unsplash.com/photo-1764616211830-993b5e360d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjB0cmFpbmluZyUyMGRvam98ZW58MXx8fHwxNzc0ODkxNzg1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Treino de Kihon" },
-  { id: 2, category: "Exames", image: "https://images.unsplash.com/photo-1722479909908-7cd41b8426be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBiZWx0JTIwY2VyZW1vbnl8ZW58MXx8fHwxNzc0OTcyNTg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Cerimónia de Graduação" },
-  { id: 3, category: "Treino", image: "https://images.unsplash.com/photo-1608583252022-09323426b8b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBrYXRhJTIwc3RhbmNlfGVufDF8fHx8MTc3NDk3MjU4NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Prática de Kata" },
-  { id: 4, category: "Treino", image: "https://images.unsplash.com/photo-1608583224016-d7fdbc3bf282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMHNlbnNlaSUyMGluc3RydWN0b3J8ZW58MXx8fHwxNzc0OTcyNTg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Sensei em Treino" },
-  { id: 5, category: "Treino", image: "https://images.unsplash.com/photo-1769095206270-09c3d233a2bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBraWQlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NzQ5NzI1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Treino Infantil" },
-  { id: 6, category: "Eventos", image: "https://images.unsplash.com/photo-1771909720903-c4567a890a6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2pvJTIwbWFydGlhbCUyMGFydHMlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NzQ5NzI1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Dojo Interior" },
-  { id: 7, category: "Exames", image: "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBibGFjayUyMGJlbHQlMjBtYXN0ZXJ8ZW58MXx8fHwxNzc0OTcyNTg2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Mestre em Cerimónia" },
-  { id: 8, category: "Treino", image: "https://images.unsplash.com/photo-1764616211830-993b5e360d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjB0cmFpbmluZyUyMGRvam98ZW58MXx8fHwxNzc0ODkxNzg1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Sessão de Treino" },
-  { id: 9, category: "Estágios", image: "https://images.unsplash.com/photo-1608583252022-09323426b8b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBrYXRhJTIwc3RhbmNlfGVufDF8fHx8MTc3NDk3MjU4NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral", title: "Estágio Nacional" },
-];
+const DEFAULT_ITEMS: GalleryItem[] = [];
 
 export function Gallery() {
+  const galleryItems = useData<GalleryItem[]>("gallery.json", DEFAULT_ITEMS);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
 
+  const categories = ["Todos", ...Array.from(new Set(galleryItems.map((i) => i.category)))];
   const filteredItems = selectedCategory === "Todos"
     ? galleryItems
     : galleryItems.filter((item) => item.category === selectedCategory);

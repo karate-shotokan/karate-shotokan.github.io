@@ -1,12 +1,41 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Send } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
 import { Card, CardContent } from "../components/ui/card";
+import { useData } from "../hooks/useData";
+
+interface ContactData {
+  phone: string;
+  phoneHours: string;
+  email: string;
+  emailNote: string;
+  addressLine1: string;
+  addressLine2: string;
+  addressLine3: string;
+  social: {
+    facebook: string;
+    instagram: string;
+    youtube: string;
+  };
+}
+
+const DEFAULT_DATA: ContactData = {
+  phone: "+351 XXX XXX XXX",
+  phoneHours: "Seg-Sex: 10h-20h",
+  email: "info@karateshotokan.pt",
+  emailNote: "Resposta em 24h",
+  addressLine1: "Lisboa",
+  addressLine2: "",
+  addressLine3: "Portugal",
+  social: { facebook: "#", instagram: "#", youtube: "#" },
+};
 
 export function Contact() {
+  const contact = useData<ContactData>("contact.json", DEFAULT_DATA);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -46,8 +75,8 @@ export function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold mb-2 text-neutral-900">Telefone</h3>
-                      <p className="text-neutral-600">+351 XXX XXX XXX</p>
-                      <p className="text-sm text-neutral-500 mt-1">Seg-Sex: 10h-20h</p>
+                      <p className="text-neutral-600">{contact.phone}</p>
+                      <p className="text-sm text-neutral-500 mt-1">{contact.phoneHours}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -59,8 +88,8 @@ export function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold mb-2 text-neutral-900">Email</h3>
-                      <p className="text-neutral-600">info@karateshotokan.pt</p>
-                      <p className="text-sm text-neutral-500 mt-1">Resposta em 24h</p>
+                      <p className="text-neutral-600">{contact.email}</p>
+                      <p className="text-sm text-neutral-500 mt-1">{contact.emailNote}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -73,9 +102,9 @@ export function Contact() {
                     <div>
                       <h3 className="font-bold mb-2 text-neutral-900">Sede</h3>
                       <p className="text-neutral-600">
-                        Av. da República, 123<br />
-                        1050-123 Lisboa<br />
-                        Portugal
+                        {contact.addressLine1}<br />
+                        {contact.addressLine2 && <>{contact.addressLine2}<br /></>}
+                        {contact.addressLine3}
                       </p>
                     </div>
                   </CardContent>
@@ -87,19 +116,25 @@ export function Contact() {
                 <h3 className="font-bold mb-4 text-neutral-900">Siga-nos</h3>
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href={contact.social.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-neutral-100 rounded-lg flex items-center justify-center hover:bg-[#8B0000] hover:text-white transition-colors"
                   >
                     <Facebook size={24} />
                   </a>
                   <a
-                    href="#"
+                    href={contact.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-neutral-100 rounded-lg flex items-center justify-center hover:bg-[#8B0000] hover:text-white transition-colors"
                   >
                     <Instagram size={24} />
                   </a>
                   <a
-                    href="#"
+                    href={contact.social.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-neutral-100 rounded-lg flex items-center justify-center hover:bg-[#8B0000] hover:text-white transition-colors"
                   >
                     <Youtube size={24} />
@@ -127,22 +162,18 @@ export function Contact() {
                         <Label htmlFor="name">Nome *</Label>
                         <Input id="name" required className="mt-1" />
                       </div>
-
                       <div>
                         <Label htmlFor="email">Email *</Label>
                         <Input id="email" type="email" required className="mt-1" />
                       </div>
-
                       <div>
                         <Label htmlFor="phone">Telefone</Label>
                         <Input id="phone" type="tel" className="mt-1" />
                       </div>
-
                       <div>
                         <Label htmlFor="subject">Assunto *</Label>
                         <Input id="subject" required className="mt-1" />
                       </div>
-
                       <div>
                         <Label htmlFor="message">Mensagem *</Label>
                         <Textarea
@@ -152,7 +183,6 @@ export function Contact() {
                           className="mt-1 min-h-32"
                         />
                       </div>
-
                       <Button type="submit" size="lg" className="w-full bg-[#8B0000] hover:bg-[#6B0000]">
                         Enviar Mensagem
                       </Button>
@@ -191,7 +221,7 @@ export function Contact() {
             Consulte a nossa página de Perguntas Frequentes para encontrar respostas às questões mais comuns
           </p>
           <Button asChild size="lg" variant="outline">
-            <a href="/iniciacao">Ver FAQ</a>
+            <Link to="/iniciacao">Ver FAQ</Link>
           </Button>
         </div>
       </section>

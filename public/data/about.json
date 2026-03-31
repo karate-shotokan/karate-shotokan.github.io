@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "badge": "SENSEI",
+    "title": "Carlos Cardoso",
+    "subtitle": "Mestre de Karaté Shotokan 7º Dan • Formador de Campeões • Guardião da Tradição"
+  },
+  "biography": [
+    "O Sensei Carlos Cardoso iniciou a sua jornada no Karaté Shotokan aos 12 anos, descobrindo desde cedo a paixão que se tornaria o propósito da sua vida.",
+    "Ao longo de mais de 35 anos de prática, dedicou-se intensamente ao estudo e aperfeiçoamento das técnicas tradicionais, treinando com alguns dos maiores mestres de Karaté Shotokan a nível mundial.",
+    "Em 1995, fundou a sua primeira escola, movido pelo desejo de partilhar os ensinamentos que transformaram a sua vida. Desde então, tem formado milhares de alunos, desde crianças a adultos, sempre com o mesmo compromisso: transmitir não apenas técnica, mas valores que perduram para toda a vida.",
+    "Reconhecido pela ANAM (Associação Nacional de Artes Marciais) e respeitado internacionalmente, o Sensei Carlos continua a aprender, a ensinar e a inspirar, mantendo viva a chama do verdadeiro Karaté-Do."
+  ],
+  "photo": "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBibGFjayUyMGJlbHQlMjBtYXN0ZXJ8ZW58MXx8fHwxNzc0OTcyNTg2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  "athletesPhoto": "https://images.unsplash.com/photo-1722479909908-7cd41b8426be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBiZWx0JTIwY2VyZW1vbnl8ZW58MXx8fHwxNzc0OTcyNTg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  "quote": "O objetivo final do Karaté não é a vitória ou a derrota, mas o aperfeiçoamento do caráter dos seus praticantes.",
+  "achievements": [
+    {
+      "icon": "Award",
+      "title": "7º Dan Karaté Shotokan",
+      "description": "Reconhecido internacionalmente pela sua dedicação e mestria"
+    },
+    {
+      "icon": "GraduationCap",
+      "title": "+30 Anos de Ensino",
+      "description": "Três décadas formando praticantes de excelência"
+    },
+    {
+      "icon": "Trophy",
+      "title": "Campeões Formados",
+      "description": "Treinou atletas campeões nacionais e internacionais"
+    },
+    {
+      "icon": "Users",
+      "title": "+1000 Alunos",
+      "description": "Milhares de vidas transformadas através do karaté"
+    }
+  ],
+  "philosophy": [
+    {
+      "icon": "Heart",
+      "title": "Respeito pela Tradição",
+      "description": "Manter viva a essência do Karaté Shotokan tradicional, honrando os mestres que vieram antes."
+    },
+    {
+      "icon": "Target",
+      "title": "Desenvolvimento Integral",
+      "description": "Formar não apenas karatecas, mas pessoas de caráter, disciplina e valores sólidos."
+    },
+    {
+      "icon": "Users",
+      "title": "Ensino Para Todos",
+      "description": "Acreditar que o karaté é para todas as idades e níveis, adaptando o ensino a cada praticante."
+    }
+  ]
+}

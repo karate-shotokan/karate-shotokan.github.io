@@ -3,65 +3,19 @@ import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
+import { useData } from "../hooks/useData";
 
-const events = [
-  {
-    id: 1,
-    type: "Exame de Graduação",
-    title: "Exame de Cintos - Primavera 2026",
-    date: "15 de Maio de 2026",
-    location: "Dojo Central Lisboa",
-    description: "Exame de passagem de grau para todos os níveis. Inscrições abertas até 1 de Maio.",
-    status: "upcoming",
-  },
-  {
-    id: 2,
-    type: "Estágio",
-    title: "Estágio Nacional de Kata",
-    date: "22-23 de Junho de 2026",
-    location: "Porto",
-    description: "Dois dias intensivos de treino focado em Kata com a presença de mestres nacionais.",
-    status: "upcoming",
-  },
-  {
-    id: 3,
-    type: "Competição",
-    title: "Campeonato Regional Norte",
-    date: "10 de Julho de 2026",
-    location: "Braga",
-    description: "Competição regional de Kumite e Kata. Aberto a todos os praticantes federados.",
-    status: "upcoming",
-  },
-  {
-    id: 4,
-    type: "Seminário",
-    title: "Seminário Internacional com Sensei Tanaka",
-    date: "5-6 de Setembro de 2026",
-    location: "Lisboa",
-    description: "Seminário especial com o mestre japonês Sensei Tanaka, 8º Dan.",
-    status: "upcoming",
-  },
-  {
-    id: 5,
-    type: "Demonstração",
-    title: "Demonstração Pública - Dia do Município",
-    date: "20 de Outubro de 2026",
-    location: "Coimbra",
-    description: "Demonstração pública de Karaté Shotokan nas celebrações do município.",
-    status: "upcoming",
-  },
-  {
-    id: 6,
-    type: "Exame",
-    title: "Exame de Cintos - Outono 2026",
-    date: "15 de Novembro de 2026",
-    location: "Vários Dojos",
-    description: "Exame de graduação em todos os dojos. Datas específicas a confirmar por cada localização.",
-    status: "upcoming",
-  },
-];
+interface Event {
+  id: number;
+  type: string;
+  title: string;
+  date: string;
+  location: string;
+  description: string;
+  status: string;
+}
 
-const typeColors: Record<string, string> = {
+const TYPE_COLORS: Record<string, string> = {
   "Exame de Graduação": "bg-[#8B0000] text-white",
   "Estágio": "bg-blue-600 text-white",
   "Competição": "bg-amber-600 text-white",
@@ -70,7 +24,11 @@ const typeColors: Record<string, string> = {
   "Exame": "bg-[#8B0000] text-white",
 };
 
+const DEFAULT_EVENTS: Event[] = [];
+
 export function Events() {
+  const events = useData<Event[]>("events.json", DEFAULT_EVENTS);
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -96,7 +54,7 @@ export function Events() {
                 <CardContent className="p-8">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     <div className="flex-1">
-                      <Badge className={`${typeColors[event.type]} mb-3`}>
+                      <Badge className={`${TYPE_COLORS[event.type] ?? "bg-neutral-600 text-white"} mb-3`}>
                         {event.type}
                       </Badge>
                       <h3 className="text-2xl font-bold mb-3 text-neutral-900">{event.title}</h3>

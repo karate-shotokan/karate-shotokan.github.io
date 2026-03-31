@@ -1,0 +1,42 @@
+{
+  "videos": [
+    { "title": "Como Atar o Cinto", "category": "Tutorial", "duration": "3:45", "url": "#" },
+    { "title": "Heian Shodan - Demonstração", "category": "Kata", "duration": "2:15", "url": "#" },
+    { "title": "Heian Nidan - Demonstração", "category": "Kata", "duration": "2:30", "url": "#" },
+    { "title": "Kihon Básico para Iniciantes", "category": "Tutorial", "duration": "8:20", "url": "#" },
+    { "title": "Kumite - Técnicas de Distância", "category": "Kumite", "duration": "6:15", "url": "#" },
+    { "title": "Bassai Dai - Passo a Passo", "category": "Kata", "duration": "12:40", "url": "#" },
+    { "title": "Preparação Física para Karaté", "category": "Treino", "duration": "10:00", "url": "#" },
+    { "title": "História do Karaté Shotokan", "category": "Teoria", "duration": "15:30", "url": "#" }
+  ],
+  "tutorialSeries": [
+    {
+      "title": "Iniciação ao Karaté",
+      "description": "Tudo o que precisa para começar: etiqueta, posições básicas, primeiras técnicas",
+      "count": 12,
+      "duration": "1h 30min",
+      "url": "#"
+    },
+    {
+      "title": "Katas Fundamentais",
+      "description": "Demonstrações e explicações detalhadas dos katas Heian e Tekki",
+      "count": 8,
+      "duration": "2h 15min",
+      "url": "#"
+    },
+    {
+      "title": "Kumite Avançado",
+      "description": "Técnicas de combate, estratégia e táticas para competição",
+      "count": 15,
+      "duration": "3h 45min",
+      "url": "#"
+    }
+  ],
+  "links": [
+    { "title": "Japan Karate Association (JKA)", "url": "#" },
+    { "title": "Associação Nacional de Artes Marciais (ANAM)", "url": "#" },
+    { "title": "World Karate Federation", "url": "#" },
+    { "title": "Federação Portuguesa de Karaté", "url": "#" },
+    { "title": "Shotokan Karate International", "url": "#" }
+  ]
+}

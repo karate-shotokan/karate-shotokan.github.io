@@ -1,0 +1,36 @@
+{
+  "affiliations": [
+    {
+      "icon": "Shield",
+      "title": "ANAM",
+      "fullName": "Associação Nacional de Artes Marciais",
+      "description": "Afiliação oficial à entidade reguladora nacional das artes marciais em Portugal."
+    },
+    {
+      "icon": "Trophy",
+      "title": "FPK",
+      "fullName": "Federação Portuguesa de Karaté",
+      "description": "Reconhecimento e participação em eventos e competições oficiais nacionais."
+    },
+    {
+      "icon": "Award",
+      "title": "JKA",
+      "fullName": "Japan Karate Association",
+      "description": "Ligação à organização mundial de Karaté Shotokan fundada por Mestre Funakoshi."
+    },
+    {
+      "icon": "Users",
+      "title": "SKI",
+      "fullName": "Shotokan Karate International",
+      "description": "Membro da rede internacional de escolas de Karaté Shotokan tradicional."
+    }
+  ],
+  "partners": [
+    { "name": "Município de Lisboa", "category": "Apoio Institucional", "logo": "" },
+    { "name": "Câmara Municipal do Porto", "category": "Apoio Institucional", "logo": "" },
+    { "name": "Junta de Freguesia de Coimbra", "category": "Apoio Local", "logo": "" },
+    { "name": "KarateGi Portugal", "category": "Equipamento Desportivo", "logo": "" },
+    { "name": "Centro de Medicina Desportiva", "category": "Saúde & Bem-estar", "logo": "" },
+    { "name": "Fisioterapia Activa", "category": "Saúde & Bem-estar", "logo": "" }
+  ]
+}

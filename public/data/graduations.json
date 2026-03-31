@@ -1,0 +1,50 @@
+{
+  "beltSystem": [
+    { "level": "10º Kyu", "belt": "Branco", "color": "bg-white border-2 border-neutral-300", "requirements": "Posições básicas, bloqueios fundamentais" },
+    { "level": "9º Kyu", "belt": "Branco-Amarelo", "color": "bg-gradient-to-r from-white to-yellow-400", "requirements": "Kihon básico, Taikyoku Shodan" },
+    { "level": "8º Kyu", "belt": "Amarelo", "color": "bg-yellow-400", "requirements": "Heian Shodan, combinações básicas" },
+    { "level": "7º Kyu", "belt": "Amarelo-Laranja", "color": "bg-gradient-to-r from-yellow-400 to-orange-400", "requirements": "Heian Nidan, kumite básico" },
+    { "level": "6º Kyu", "belt": "Laranja", "color": "bg-orange-400", "requirements": "Heian Sandan, técnicas intermédias" },
+    { "level": "5º Kyu", "belt": "Laranja-Verde", "color": "bg-gradient-to-r from-orange-400 to-green-600", "requirements": "Heian Yondan, kumite 5 passos" },
+    { "level": "4º Kyu", "belt": "Verde", "color": "bg-green-600", "requirements": "Heian Godan, Tekki Shodan" },
+    { "level": "3º Kyu", "belt": "Verde-Castanho", "color": "bg-gradient-to-r from-green-600 to-amber-800", "requirements": "Bassai Dai, kumite livre básico" },
+    { "level": "2º Kyu", "belt": "Castanho", "color": "bg-amber-800", "requirements": "Kanku Dai, técnicas avançadas" },
+    { "level": "1º Kyu", "belt": "Castanho-Preto", "color": "bg-gradient-to-r from-amber-800 to-black", "requirements": "Jion, preparação para Shodan" },
+    { "level": "Shodan", "belt": "Preto (1º Dan)", "color": "bg-black", "requirements": "Domínio técnico completo, maturidade marcial" }
+  ],
+  "examRequirements": [
+    {
+      "title": "Kihon (Fundamentos)",
+      "description": "Execução correta de técnicas básicas em movimento"
+    },
+    {
+      "title": "Kata (Formas)",
+      "description": "Apresentação de kata obrigatório e kata à escolha"
+    },
+    {
+      "title": "Kumite (Combate)",
+      "description": "Demonstração de controlo e aplicação prática"
+    },
+    {
+      "title": "Conhecimento Teórico",
+      "description": "Terminologia japonesa e princípios do Karaté"
+    }
+  ],
+  "documents": [
+    {
+      "title": "Programa Técnico Kyus (Cintos de Cor)",
+      "description": "Conteúdos detalhados do 10º ao 1º Kyu",
+      "url": "#"
+    },
+    {
+      "title": "Programa Técnico Dans (Cintos Negros)",
+      "description": "Requisitos para Shodan e graduações superiores",
+      "url": "#"
+    },
+    {
+      "title": "Lista de Katas por Graduação",
+      "description": "Katas obrigatórios e opcionais",
+      "url": "#"
+    }
+  ]
+}

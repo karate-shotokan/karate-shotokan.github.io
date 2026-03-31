@@ -1,41 +1,38 @@
+import { Link } from "react-router";
 import { Download } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
+import { useData } from "../hooks/useData";
 
-const beltSystem = [
-  { level: "10º Kyu", belt: "Branco", color: "bg-white border-2 border-neutral-300", requirements: "Posições básicas, bloqueios fundamentais" },
-  { level: "9º Kyu", belt: "Branco-Amarelo", color: "bg-gradient-to-r from-white to-yellow-400", requirements: "Kihon básico, Taikyoku Shodan" },
-  { level: "8º Kyu", belt: "Amarelo", color: "bg-yellow-400", requirements: "Heian Shodan, combinações básicas" },
-  { level: "7º Kyu", belt: "Amarelo-Laranja", color: "bg-gradient-to-r from-yellow-400 to-orange-400", requirements: "Heian Nidan, kumite básico" },
-  { level: "6º Kyu", belt: "Laranja", color: "bg-orange-400", requirements: "Heian Sandan, técnicas intermédias" },
-  { level: "5º Kyu", belt: "Laranja-Verde", color: "bg-gradient-to-r from-orange-400 to-green-600", requirements: "Heian Yondan, kumite 5 passos" },
-  { level: "4º Kyu", belt: "Verde", color: "bg-green-600", requirements: "Heian Godan, Tekki Shodan" },
-  { level: "3º Kyu", belt: "Verde-Castanho", color: "bg-gradient-to-r from-green-600 to-amber-800", requirements: "Bassai Dai, kumite livre básico" },
-  { level: "2º Kyu", belt: "Castanho", color: "bg-amber-800", requirements: "Kanku Dai, técnicas avançadas" },
-  { level: "1º Kyu", belt: "Castanho-Preto", color: "bg-gradient-to-r from-amber-800 to-black", requirements: "Jion, preparação para Shodan" },
-  { level: "Shodan", belt: "Preto (1º Dan)", color: "bg-black", requirements: "Domínio técnico completo, maturidade marcial" },
-];
+interface BeltGrade {
+  level: string;
+  belt: string;
+  color: string;
+  requirements: string;
+}
 
-const examRequirements = [
-  {
-    title: "Kihon (Fundamentos)",
-    description: "Execução correta de técnicas básicas em movimento",
-  },
-  {
-    title: "Kata (Formas)",
-    description: "Apresentação de kata obrigatório e kata à escolha",
-  },
-  {
-    title: "Kumite (Combate)",
-    description: "Demonstração de controlo e aplicação prática",
-  },
-  {
-    title: "Conhecimento Teórico",
-    description: "Terminologia japonesa e princípios do Karaté",
-  },
-];
+interface ExamRequirement {
+  title: string;
+  description: string;
+}
+
+interface GraduationDocument {
+  title: string;
+  description: string;
+  url: string;
+}
+
+interface GraduationsData {
+  beltSystem: BeltGrade[];
+  examRequirements: ExamRequirement[];
+  documents: GraduationDocument[];
+}
+
+const DEFAULT_DATA: GraduationsData = { beltSystem: [], examRequirements: [], documents: [] };
 
 export function Graduations() {
+  const { beltSystem, examRequirements, documents } = useData<GraduationsData>("graduations.json", DEFAULT_DATA);
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -58,7 +55,7 @@ export function Graduations() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-neutral-900">Sistema de Cintos</h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              A progressão no Karaté é simbolizada por um sistema de cintos (kyus e dans) que 
+              A progressão no Karaté é simbolizada por um sistema de cintos (kyus e dans) que
               representa o desenvolvimento técnico e pessoal do praticante
             </p>
           </div>
@@ -121,48 +118,22 @@ export function Graduations() {
               </p>
             </div>
             <div className="space-y-4">
-              <Card className="border-none shadow-md">
-                <CardContent className="p-6 flex items-center justify-between">
-                  <div>
-                    <h3 className="font-bold text-lg text-neutral-900 mb-1">
-                      Programa Técnico Kyus (Cintos de Cor)
-                    </h3>
-                    <p className="text-neutral-600">Conteúdos detalhados do 10º ao 1º Kyu</p>
-                  </div>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Download size={18} />
-                    Download PDF
-                  </Button>
-                </CardContent>
-              </Card>
-              <Card className="border-none shadow-md">
-                <CardContent className="p-6 flex items-center justify-between">
-                  <div>
-                    <h3 className="font-bold text-lg text-neutral-900 mb-1">
-                      Programa Técnico Dans (Cintos Negros)
-                    </h3>
-                    <p className="text-neutral-600">Requisitos para Shodan e graduações superiores</p>
-                  </div>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Download size={18} />
-                    Download PDF
-                  </Button>
-                </CardContent>
-              </Card>
-              <Card className="border-none shadow-md">
-                <CardContent className="p-6 flex items-center justify-between">
-                  <div>
-                    <h3 className="font-bold text-lg text-neutral-900 mb-1">
-                      Lista de Katas por Graduação
-                    </h3>
-                    <p className="text-neutral-600">Katas obrigatórios e opcionais</p>
-                  </div>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Download size={18} />
-                    Download PDF
-                  </Button>
-                </CardContent>
-              </Card>
+              {documents.map((doc, index) => (
+                <Card key={index} className="border-none shadow-md">
+                  <CardContent className="p-6 flex items-center justify-between">
+                    <div>
+                      <h3 className="font-bold text-lg text-neutral-900 mb-1">{doc.title}</h3>
+                      <p className="text-neutral-600">{doc.description}</p>
+                    </div>
+                    <Button asChild variant="outline" className="flex items-center gap-2 ml-4 flex-shrink-0">
+                      <a href={doc.url} target="_blank" rel="noopener noreferrer">
+                        <Download size={18} />
+                        Download PDF
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
@@ -174,13 +145,13 @@ export function Graduations() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">O Significado da Graduação</h2>
             <p className="text-lg mb-6 opacity-90">
-              No Karaté Shotokan, a graduação não é apenas um reconhecimento técnico, mas um marco 
-              no desenvolvimento pessoal do praticante. Cada cinto representa um novo patamar de 
+              No Karaté Shotokan, a graduação não é apenas um reconhecimento técnico, mas um marco
+              no desenvolvimento pessoal do praticante. Cada cinto representa um novo patamar de
               responsabilidade, humildade e compromisso com a arte.
             </p>
             <p className="text-lg opacity-90">
-              O cinto preto não é o fim da jornada, mas o verdadeiro começo. Shodan significa 
-              literalmente "primeiro degrau" - é quando o karateca está finalmente pronto para 
+              O cinto preto não é o fim da jornada, mas o verdadeiro começo. Shodan significa
+              literalmente "primeiro degrau" - é quando o karateca está finalmente pronto para
               aprender a verdadeira essência do Karaté-Do.
             </p>
           </div>
@@ -192,11 +163,11 @@ export function Graduations() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6 text-neutral-900">Próximos Exames</h2>
           <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Os exames de graduação realizam-se duas vezes por ano. Consulte a página de eventos 
+            Os exames de graduação realizam-se duas vezes por ano. Consulte a página de eventos
             para datas específicas e informações de inscrição.
           </p>
           <Button asChild size="lg" className="bg-[#8B0000] hover:bg-[#6B0000]">
-            <a href="/eventos">Ver Calendário de Eventos</a>
+            <Link to="/eventos">Ver Calendário de Eventos</Link>
           </Button>
         </div>
       </section>

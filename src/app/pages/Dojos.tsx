@@ -4,77 +4,28 @@ import { MapPin, Clock, Phone, Mail, ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { useData } from "../hooks/useData";
 
-const dojos = [
-  {
-    id: 1,
-    name: "Dojo Central Lisboa",
-    location: "Lisboa",
-    address: "Av. da República, 123, 1050-123 Lisboa",
-    phone: "+351 21 XXX XXXX",
-    email: "lisboa@karateshotokan.pt",
-    schedule: ["Seg/Qua/Sex: 18h00-19h30 (Infantil)", "Ter/Qui: 19h30-21h00 (Adultos)", "Sáb: 10h00-12h00 (Todos)"],
-    image: "https://images.unsplash.com/photo-1764616211830-993b5e360d82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjB0cmFpbmluZyUyMGRvam98ZW58MXx8fHwxNzc0ODkxNzg1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 2,
-    name: "Dojo Norte Porto",
-    location: "Porto",
-    address: "Rua de Santa Catarina, 456, 4000-123 Porto",
-    phone: "+351 22 XXX XXXX",
-    email: "porto@karateshotokan.pt",
-    schedule: ["Seg/Qua/Sex: 17h30-19h00 (Infantil)", "Ter/Qui: 19h00-20h30 (Adultos)", "Sáb: 09h30-11h30 (Todos)"],
-    image: "https://images.unsplash.com/photo-1771909720903-c4567a890a6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2pvJTIwbWFydGlhbCUyMGFydHMlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NzQ5NzI1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 3,
-    name: "Dojo Coimbra",
-    location: "Coimbra",
-    address: "Praça da República, 789, 3000-123 Coimbra",
-    phone: "+351 23 XXX XXXX",
-    email: "coimbra@karateshotokan.pt",
-    schedule: ["Seg/Qua: 18h00-19h30 (Infantil)", "Ter/Qui: 19h30-21h00 (Adultos)", "Sáb: 10h00-12h00 (Todos)"],
-    image: "https://images.unsplash.com/photo-1608583252022-09323426b8b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBrYXRhJTIwc3RhbmNlfGVufDF8fHx8MTc3NDk3MjU4NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 4,
-    name: "Dojo Braga",
-    location: "Braga",
-    address: "Av. Central, 234, 4700-123 Braga",
-    phone: "+351 25 XXX XXXX",
-    email: "braga@karateshotokan.pt",
-    schedule: ["Seg/Qua/Sex: 18h00-19h30 (Infantil)", "Ter/Qui: 19h30-21h00 (Adultos)"],
-    image: "https://images.unsplash.com/photo-1769095206270-09c3d233a2bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBraWQlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NzQ5NzI1ODV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 5,
-    name: "Dojo Setúbal",
-    location: "Setúbal",
-    address: "Rua Principal, 567, 2900-123 Setúbal",
-    phone: "+351 26 XXX XXXX",
-    email: "setubal@karateshotokan.pt",
-    schedule: ["Seg/Qua: 18h00-19h30 (Infantil)", "Ter/Qui: 19h30-21h00 (Adultos)", "Sáb: 10h00-11h30 (Todos)"],
-    image: "https://images.unsplash.com/photo-1608583224016-d7fdbc3bf282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMHNlbnNlaSUyMGluc3RydWN0b3J8ZW58MXx8fHwxNzc0OTcyNTg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 6,
-    name: "Dojo Faro",
-    location: "Faro",
-    address: "Rua do Algarve, 890, 8000-123 Faro",
-    phone: "+351 28 XXX XXXX",
-    email: "faro@karateshotokan.pt",
-    schedule: ["Seg/Qua/Sex: 18h00-19h30 (Infantil)", "Ter/Qui: 19h30-21h00 (Adultos)"],
-    image: "https://images.unsplash.com/photo-1722479909908-7cd41b8426be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjBiZWx0JTIwY2VyZW1vbnl8ZW58MXx8fHwxNzc0OTcyNTg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-];
+interface Dojo {
+  id: number;
+  name: string;
+  location: string;
+  address: string;
+  phone: string;
+  email: string;
+  schedule: string[];
+  image: string;
+}
 
-const cities = ["Todos", ...Array.from(new Set(dojos.map((d) => d.location)))];
+const DEFAULT_DOJOS: Dojo[] = [];
 
 export function Dojos() {
+  const dojos = useData<Dojo[]>("dojos.json", DEFAULT_DOJOS);
   const [selectedCity, setSelectedCity] = useState("Todos");
 
-  const filteredDojos = selectedCity === "Todos" 
-    ? dojos 
+  const cities = ["Todos", ...Array.from(new Set(dojos.map((d) => d.location)))];
+  const filteredDojos = selectedCity === "Todos"
+    ? dojos
     : dojos.filter((d) => d.location === selectedCity);
 
   return (
@@ -130,7 +81,7 @@ export function Dojos() {
                     {dojo.location}
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-neutral-900">{dojo.name}</h3>
-                  
+
                   <div className="space-y-3 mb-6">
                     <div className="flex items-start gap-2 text-neutral-600">
                       <MapPin size={18} className="mt-1 flex-shrink-0" />
